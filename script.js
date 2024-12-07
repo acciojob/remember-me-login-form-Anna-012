@@ -4,7 +4,7 @@ function handleLogin(){
 	const password = document.getElementById("password").value;
 	const checkbox = document.getElementByID('checkbox').checked;
 
-	if(checbox){
+	if(checkbox){
 		localStorage.setItem('username', username);
 		localStorage.setItem('password', password)
 	}else{
@@ -22,3 +22,8 @@ function handleExistingLogin() {
   const savedUsername = localStorage.getItem("username");
   alert("Logged in as " + savedUsername);
 }
+
+document.getElementById('submit').addEventListener('click', function(event) {
+    event.preventDefault();
+    handleLogin();
+});
